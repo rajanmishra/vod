@@ -9,25 +9,28 @@ Demo:  https://vod-10.herokuapp.com/#/
 ----------------------
 
 1. Install nodejs (http://nodejs.org/download/)
-2. Clone or download the project from github.
+2. Clone or download the project from github. https://github.com/rajanmishra/vod.git
 3. Run ``` npm install ``` to install all node module dependancies 
-4. Run ```  node start ``` to run the application
-5. Application web app will be availabe in http://localhost:3000/ 
+4. Change monogodabase host here : model/connection.js
+5. Change API enpoint here : public/src/js/config.js
+6. Run ```  node start ``` to run the application
+7. Application web app will be availabe in http://localhost:3000/ 
 
 ##Set-Up Server -- Heroku
 ----------------------
 
 1. Create account on Heroku https://signup.heroku.com/signup/dc
 2. Download hHeroku CLI https://devcenter.heroku.com/articles/heroku-cli
-3. Clone repo from github
+3. Clone repo from github https://github.com/rajanmishra/vod.git
 4. npm install
 5. heroku login (check if installed heroku -v)
-6. heroku addons:create mongolab (to install mongodb)
-7. heroku local web Your app should now be running on http://localhost:5000/.
-8. heroku create
-9. change the URL of api with the above create URL in public/app/js/config.js
-10.git push heroku master
-11.heroku open
+6. heroku create
+7. heroku addons:create mongolab (to install mongodb)
+8. Check monogodb host here : model/connection.js
+9. Change API enpoint here : public/src/js/config.js (generated in step 6)
+10.heroku local web Your app should now be running on http://localhost:5000/
+11.git push heroku master
+12.heroku open
 
 
 Application Features 
