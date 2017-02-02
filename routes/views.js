@@ -6,12 +6,14 @@ var utcDate = function(){
 	return new Date( moment().toISOString() );
 };
 
-/* GET users listing. */
-/*build the REST operations at the base for users
-*this will be accessible from http://127.0.0.1:3000/users if the default route for / is left unchanged*/
+
+/*build the REST operations at the base for views
+*this will be accessible from http://127.0.0.1:3000/views 
+*if the default route for / is left unchanged
+*/
 
 router.route('/')
-    //GET all users
+    //GET all views
     .get(function(req, res, next) {
         //retrieve all views from Monogo
         mongoose.model('View').find({}, function (err, views) {
@@ -53,7 +55,8 @@ router.route('/')
         });
     });
 	
- router.route('/me')
+ /*fetch view with referrence to each key*/	
+router.route('/me')
 	.post(function(req, res, next) {
 		
 		var params  = req.body.params;
@@ -73,5 +76,6 @@ router.route('/')
               }     
         });
     });
+	/*fetch view with referrence to each key*/	
 
 module.exports = router;

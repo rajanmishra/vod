@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');  
+/*document schema for users*/
 var userSchema = new mongoose.Schema({ 
   _id :  String,
   fingerPrint: String,

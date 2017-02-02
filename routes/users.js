@@ -7,8 +7,10 @@ var utcDate = function(){
 };
 
 /* GET users listing. */
-/*build the REST operations at the base for users
-*this will be accessible from http://127.0.0.1:3000/users if the default route for / is left unchanged*/
+/* build the REST operations at the base for users
+*  this will be accessible from http://127.0.0.1:3000/users 
+*  if the default route for / is left unchanged
+*/
 
 router.route('/')
     //GET all users
@@ -39,13 +41,15 @@ router.route('/')
             userAgent : userAgent
         }, function (err, user) {
               if (err) {
+					/*send user if already exists*/
 					mongoose.model('User').findById(key, function (err, user) {
 						if (err) {
 							console.log('GET Error: There was a problem retrieving: ' + err);
 						} else {
 								  res.json(user);
 						}
-					}); 
+					});
+					/*send user if already exists*/					
               } else {
 					console.log('POST creating new user: ' + user);
                     res.json(user);

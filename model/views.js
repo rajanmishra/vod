@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');  
+/*document schema for views*/
 var viewSchema = new mongoose.Schema({ 
 	videoId:String,
 	fingerPrint:String,
