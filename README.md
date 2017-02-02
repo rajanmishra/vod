@@ -17,18 +17,18 @@ Demo:
 ##Set-Up Server -- Heroku
 ----------------------
 
-Create account on Heroku https://signup.heroku.com/signup/dc
-Download hHeroku CLI https://devcenter.heroku.com/articles/heroku-cli
-Clone repo from github
-npm install
-heroku login (check if installed heroku -v)
-heroku addons:create mongolab (to install mongodb)
-heroku local web Your app should now be running on http://localhost:5000/.
+1. Create account on Heroku https://signup.heroku.com/signup/dc
+2. Download hHeroku CLI https://devcenter.heroku.com/articles/heroku-cli
+3. Clone repo from github
+4. npm install
+5. heroku login (check if installed heroku -v)
+6. heroku addons:create mongolab (to install mongodb)
+7. heroku local web Your app should now be running on http://localhost:5000/.
 
-heroku create
-change the URL of api with the above create URL in public/app/js/config.js
-git push heroku master
-heroku open
+8. heroku create
+9. change the URL of api with the above create URL in public/app/js/config.js
+10.git push heroku master
+11.heroku open
 
 
 Application Features
@@ -53,7 +53,7 @@ Database - MongoDB
 Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
 
 
-git push heroku master
-heroku open
+1.git push heroku master
+2.heroku open
 
 
