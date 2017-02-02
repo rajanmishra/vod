@@ -6,15 +6,29 @@ Simple Media App VOD (Video On-Demand) application that keeps track of a list of
 Demo:  
 
 ##Set-Up Locally
----
+----------------------
 
 1. Install nodejs (http://nodejs.org/download/)
-2. Clone or download the project in to pc.
-3. Comment 
+2. Clone or download the project from github.
 3. Run ``` npm install ``` to install all node module dependancies 
-4. Run ```  node index.js ``` to run the application
+4. Run ```  node start ``` to run the application
 5. Application web app will be availabe in http://localhost:3000/ 
 
+##Set-Up Server -- Heroku
+----------------------
+
+Create account on Heroku https://signup.heroku.com/signup/dc
+Download hHeroku CLI https://devcenter.heroku.com/articles/heroku-cli
+Clone repo from github
+npm install
+heroku login (check if installed heroku -v)
+heroku addons:create mongolab (to install mongodb)
+heroku local web Your app should now be running on http://localhost:5000/.
+
+heroku create
+change the URL of api with the above create URL in public/app/js/config.js
+git push heroku master
+heroku open
 
 
 Application Features
@@ -28,15 +42,18 @@ Application Features
 
 ##Aplication Architechture
 
+Application Server - Nodejs
+Application Framework - Express js
+Frontend - Angular, html, css
+Database - MongoDB
+
 
 ##Deployment
 
 Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
 
-Mongodb sand box free version of [mlab] is used  for saving data. Using the folllowing command its possible to connect to the data base directly.
 
-```` mongo ds037155.mlab.com:37155/vod -u <dbuser> -p <dbpassword> ````
-
-
+git push heroku master
+heroku open
 
 
