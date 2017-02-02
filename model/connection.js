@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/video1');
+mongoose.connect(process.env.MONGODB_URI);
 
 
 
