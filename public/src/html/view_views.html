@@ -1,0 +1,41 @@
+<div class="container">
+<div id="views" ng-controller="videoViewsController" ng-init="showHistory()">
+ 	<div class="row">
+        <div class="col-md-12">    
+        
+            <ul class="timeline" id="user-video-history-list">
+                 <li class="time-label">
+                    <span class="bg-aqua">
+                        History
+                    </span>
+                </li>  
+
+                <li ng-repeat="log in params.logs" track-by="log._id" ng-attr-id="{{ 'log_' + log._id}}" ng-model="log" >
+                    <i class="fa fa-video-camera bg-maroon"></i>
+                    <div class="timeline-item">
+                        <span class="time"><i class="fa fa-clock-o"></i>&nbsp;{{log.duration}}</span>
+                        <h3 class="timeline-header">
+                        <i class="fa fa-calendar"></i>&nbsp;{{log.date}}</h3>
+                        <div class="timeline-body">
+							<div class="row">
+                            <a  ng-click="play()" class="thumb-container">
+							<img src="{{log.imgUrl}}" alt="..." class='small-thumbnail' />
+							</a>
+							
+							<div class="log-desc">
+							<strong>{{log.title}} </strong>
+							<p>{{log.description}}</p>
+							</div>
+							</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                </li>
+            </ul>   
+        </div>
+    </div>  
+</div> 
+</div> 
+<div ng-include="'src/html/video_player.html'"></div> 

@@ -1,0 +1,19 @@
+
+<div ng-controller="videoController" >
+	<div class="container-fluid" ng-init="init()">
+        <div id="slide-container" tabIndex="0" ng-keydown="onKeyDown($event)">
+            <a class="btn slide-nav left" ng-click="scroll('LEFT')" > 
+                <i class="fa fa-angle-left fa-2x arrow"></i> 
+            </a> 
+            <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="video-item {{video.selectedClass}}" ng-click="selectVideo()"  >
+				<h2>{{video.title}}</h2>
+                <img ng-click="play()" src="{{video.imgUrl}}" alt="..."/>
+				<a ng-click="play()"  class="play"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
+            </div> 
+            <a class="btn slide-nav right" ng-click="scroll('RIGHT')"> 
+                <i class="fa fa-angle-right fa-2x arrow"></i> 
+            </a> 
+        </div>
+    </div>
+</div>
+<div ng-include="'src/html/video_player.html'"></div>
