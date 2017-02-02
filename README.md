@@ -3,7 +3,7 @@ Media App VOD (Video On-Demand) application
 
 Simple Media App VOD (Video On-Demand) application that keeps track of a list of videos the user has watched.
 
-Demo:  
+Demo:  https://vod-10.herokuapp.com/#/
 
 ##Set-Up Locally
 ----------------------
@@ -30,12 +30,18 @@ Demo:
 11.heroku open
 
 
-Application Features
+Application Features 
+
 1.	Application should display a list of videos in a horizontal carousel on the home page which can be scrollable.
+
 2.	User should be able to select a video to play in full screen.
+
 3.	When the video is finished, the application should go back to the previous page.
+
 4.	The user should be able to use a mouse and keyboard to select the video.
+
 5.	The user should be able to see a list of videos they have previously watched.
+
 6.	The application must be responsible to changing screen sizes. You do not need to implement a mobile view but it should at least adjust based on the desktop browser width.
 
 
@@ -52,7 +58,7 @@ Database - MongoDB
 Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
 
 
-1.git push heroku maste
-2.heroku open
+1. git push heroku masterss
+2. heroku open
 
 
