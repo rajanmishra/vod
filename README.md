@@ -24,7 +24,6 @@ Demo:
 5. heroku login (check if installed heroku -v)
 6. heroku addons:create mongolab (to install mongodb)
 7. heroku local web Your app should now be running on http://localhost:5000/.
-
 8. heroku create
 9. change the URL of api with the above create URL in public/app/js/config.js
 10.git push heroku master
@@ -53,7 +52,7 @@ Database - MongoDB
 Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
 
 
-1.git push heroku master
+1.git push heroku maste
 2.heroku open
 
 
