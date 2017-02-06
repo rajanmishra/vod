@@ -22,7 +22,7 @@ Demo:  https://vod-10.herokuapp.com/#/
 	
 	5.3 Open another command prompt or terminal go to  ```C:\Program Files\MongoDB\Server\3.4``` (3.4 is version may vary) in windows and run ```mongo``` 
 	
-4. Change monogoDB host here : model/connection.js -- ```'mongodb://localhost/video '``` here video is database name
+4. Change monogoDB host here : model/connection.js -- ```'mongodb://localhost/video'``` here video is database name
 5. Change API enpoint here : public/src/js/config.js SERVICE_API i.e. -- ```http://localhost:3000```
 6. Run ```  npm start ``` to run the application 
 7. Application web app will be availabe in http://localhost:3000/ 
