@@ -46,6 +46,9 @@
 .video-item:first-of-type h2{
 	left: 0px;
 }
+.video-item:first-of-type h2, .video-item:first-of-type img {
+	margin-left: 6px;
+}
 .video-item:last-of-type{
 	padding-right:0px;
 }
@@ -57,7 +60,9 @@
 .video-item:last-of-type h2{
 	right: 0px;
 }
+.video-item:last-of-type h2, .video-item:first-of-type img {
 
+}
  a.play {
   display: block;
   position: absolute;
@@ -155,8 +160,19 @@ footer p{margin:0px;}
 } 
 
 .modal-video{
-    width:100%;
+    width:95%;
     height:90%
+}
+.modal-content{border:none;}
+.modal-header .close{
+	opacity: 1;
+    color: #fff;
+    width: 24px;
+    border-radius: 50%;
+    background: red;
+	outline:none;
+}
+
 }
 
 @media screen and (max-width: 800px) and (min-width: 0px) {

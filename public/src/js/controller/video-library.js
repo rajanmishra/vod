@@ -5,13 +5,14 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 	$scope.params = {};
 	$scope.scrollPos = 0;
 	$scope.scrollWidth = 800;
+	$scope.selectedVideo = {};
+	$scope.selectedVideo.index = 0;	
 	
 	var _keysHandler = {
 		//NEXT
 		39: function(){
 			if( $scope.selectedVideo.index < $scope.params.videos.length - 1 )
 				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index + 1 ]);
-			console.log(39);
 		}, 
 		//PREV
 		37:function(){
@@ -26,13 +27,13 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 	};
 
 	$scope.init = function(){
+		
 		$scope.setFingerPrint();
 		$scope.showVideoBar();
 		
 	}
 
 	$scope.onKeyDown = function(  $event ){
-		console.log('hh')
 		if( _keysHandler[$event.keyCode])
 			_keysHandler[$event.keyCode]();
 	}
@@ -43,6 +44,7 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 
 		$scope.selectedVideo = video || this.video;
 		$scope.selectedVideo.selectedClass = 'video-selected';
+		$scope.selectedVideo.index= video.index;
 
 		//auto scroll screen based on selected video position
 		var positionRatio = $('#vid_' + $scope.selectedVideo.id ).offset().left/$('body').width();
@@ -63,7 +65,6 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 		if( !fingerPrint ){
 			GLOBAL.setFingerPrint( function( key ){
 				VideoService.saveUser( key ).then( function( response ){
-					console.log('user:', response.data );
 				});
 			});
 		}
@@ -88,25 +89,46 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 			});
 
 			GLOBAL.videos = $scope.params.videos;
-			//console.log($scope.params.videos);
 
 		});
+		
 	}
 
 	$scope.scroll = function( direction ){
-		if( direction == 'LEFT')
+		if( direction == 'LEFT'){
 			$scope.scrollPos -= $scope.scrollWidth;
-		else
+		}
+		else{
 			$scope.scrollPos += $scope.scrollWidth;
+		}
 
 		$('#slide-container').animate({
             scrollLeft: $scope.scrollPos
-        }, 800);
+        },100);
 	}
+	
+	$scope.nav = function( direction ){
+		if( direction == 'LEFT'){
+			if( $scope.selectedVideo.index > 0 )
+				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index - 1 ]);
+		}
+		else{
+			if( $scope.selectedVideo.index < $scope.params.videos.length - 1 )
+				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index + 1 ]);
+		}
+
+	}	
 
 	$scope.showHistory = function(){
 		$('#slide-container').fadeOut( 'fast' );
 		$('#user-video-history-container').fadeIn( 'slow' );
 		angular.element('#user-video-history-list').scope().showHistory( );
 	}
+	
+	setTimeout(function() {
+	document.getElementById('video_container').focus();
+	document.getElementById('left_button').click();
+	}, 5000)
+
 }]);
+

@@ -13,7 +13,12 @@ app.controller('videoPlayerController', ['$scope','VideoService',
    				$('#video-player-modal').modal('hide');
 			});
 
+			$('#video-player-modal').on('show.bs.modal', function () {
+				$('video').trigger('play');
+			});
+			
 			$('#video-player-modal').on('hidden.bs.modal', function () {
+				$('video').trigger('pause');
     			$scope.saveLog( );
 			});
 		}

@@ -11,12 +11,12 @@ Demo:  https://vod-10.herokuapp.com/#/
 1. Install nodejs (http://nodejs.org/download/)
 2. Clone or download the project from github. https://github.com/rajanmishra/vod.git
 3. Run ``` npm install ``` to install all node module dependancies 
-4. Change monogodabase host here : model/connection.js
+4. Change monogoDB host here : model/connection.js
 5. Change API enpoint here : public/src/js/config.js
 6. Run ```  node start ``` to run the application
 7. Application web app will be availabe in http://localhost:3000/ 
 
-##Set-Up Server -- Heroku
+##Set-Up Production deployment -- Heroku
 ----------------------
 
 1. Create account on Heroku https://signup.heroku.com/signup/dc
@@ -26,10 +26,10 @@ Demo:  https://vod-10.herokuapp.com/#/
 5. heroku login (check if installed heroku -v)
 6. heroku create
 7. heroku addons:create mongolab (to install mongodb)
-8. Check monogodb host here : model/connection.js
+8. Check monogodb host here : model/connection.js (change according to local or production)
 9. Change API enpoint here : public/src/js/config.js (generated in step 6)
-10.heroku local web Your app should now be running on http://localhost:5000/
-11.git push heroku master
+10.git push heroku master
+11. Ensure that at least one instance of the app is running: heroku ps:scale web=1
 12.heroku open
 
 
@@ -60,8 +60,9 @@ Database - MongoDB
 
 Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
 
+Ensure that at least one instance of the app is running: heroku ps:scale web=1
 
-1. git push heroku masterss
+1. git push heroku masters
 2. heroku open
 
 
