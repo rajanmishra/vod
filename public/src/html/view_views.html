@@ -12,7 +12,7 @@
                 </li>  
 
 				<!--views history loop-->	
-                <li ng-repeat="log in params.logs | orderBy:'-date'" track-by="log._id" ng-attr-id="{{ 'log_' + log._id}}" ng-model="log" >
+                <li ng-repeat="log in params.logs | orderBy:'date'" track-by="log._id" ng-attr-id="{{ 'log_' + log._id}}" ng-model="log" >
                     <i class="fa fa-video-camera bg-maroon"></i>
                     <div class="timeline-item">
                         <span class="time"><i class="fa fa-clock-o"></i>&nbsp;{{log.duration}}</span>
