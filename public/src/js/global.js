@@ -1,5 +1,4 @@
-
-
+/*setting clocal storage to save the user key to find out the history*/
 GLOBAL = {
 	fingerprint: function( ){
 		return localStorage.getItem('VOD_U');
@@ -10,8 +9,7 @@ GLOBAL = {
 			callback( result );
 		});
 	},
-	//incase user has manually removed the fingerprint
-	//recreate it again in the client
+
 	onFingerprint:function( callback ){
 		var key = this.fingerprint();
 		if( key )
@@ -21,3 +19,4 @@ GLOBAL = {
 		}
 	}
 }
+/*setting clocal storage to save the user key to find out the history*/

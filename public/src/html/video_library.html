@@ -1,18 +1,26 @@
+<!--Creating the video slider by looping the video info from the API-->
 <div id="video_container" ng-controller="videoController" ng-init="init()" tabindex="0" ng-keydown="onKeyDown($event)" >
 	<div class="container-fluid" >
         <div id="slide-container" >
+		<!--previous button-->
             <a class="btn slide-nav left" ng-click="nav('LEFT')" id="left_button"> 
                 <i class="fa fa-angle-left fa-2x arrow"></i> 
             </a> 
+			<!--looping all the data-->
             <div ng-repeat="video in params.videos" track-by="video.id" ng-attr-id="{{ 'vid_' + video.id}}" ng-model="video" class="video-item {{video.selectedClass}}" ng-click="selectVideo()"  >
 				<h2>{{video.title}}</h2>
-                <img ng-click="play()" src="{{video.imgUrl}}" alt="..."/>
+                <img ng-click="play()" src="{{video.imgUrl}}" alt="{{video.title}}"/>
 				<a ng-click="play()"  class="play"><i class="fa fa-play-circle-o" aria-hidden="true"></i></a>
             </div> 
+			<!--looping all the data-->
+			
+			<!-- next button -->
             <a class="btn slide-nav right" ng-click="nav('RIGHT')" id="right_button"> 
                 <i class="fa fa-angle-right fa-2x arrow"></i> 
             </a> 
+			
         </div>
     </div>
 </div>
+<!-- including the player as well on the same view-->
 <div ng-include="'src/html/video_player.html'"></div>

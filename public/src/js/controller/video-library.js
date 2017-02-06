@@ -1,5 +1,5 @@
 
-
+/*video library controller fetches video from api*/
 app.controller('videoController', ['$scope','VideoService', function( $scope, VideoService ){
 	
 	$scope.params = {};
@@ -8,6 +8,7 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 	$scope.selectedVideo = {};
 	$scope.selectedVideo.index = 0;	
 	
+	/*button handelers to handlekeyboard events*/
 	var _keysHandler = {
 		//NEXT
 		39: function(){
@@ -25,23 +26,30 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 				$scope.play( $scope.selectedVideo ); 
 		}
 	};
+	/*button handelers to handlekeyboard events*/
 
+	/*on start initilize default to save user presence and show video listings*/
 	$scope.init = function(){
 		
 		$scope.setFingerPrint();
 		$scope.showVideoBar();
 		
 	}
-
+	/*on start initilize default to save user presence and show video listings*/
+	
+	/*handle key events*/
 	$scope.onKeyDown = function(  $event ){
 		if( _keysHandler[$event.keyCode])
 			_keysHandler[$event.keyCode]();
 	}
-
+	/*handle key events*/
+	
+	/*bring video in focus so that it can be played using keyboard*/
 	$scope.selectVideo = function( video ){
 		if($scope.selectedVideo )
 			$scope.selectedVideo.selectedClass = '';
-
+		
+		/*add selected class*/
 		$scope.selectedVideo = video || this.video;
 		$scope.selectedVideo.selectedClass = 'video-selected';
 		$scope.selectedVideo.index= video.index;
@@ -55,11 +63,15 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 			$scope.scroll('RIGHT');
 
 	}
-
+	/*bring video in focus so that it can be played using keyboard*/
+	
+	/*play the video in video player*/
 	$scope.play = function( video ){
 		angular.element('#video-player-modal').scope().loadVideo( video || this.video );
 	}
-
+	/*play the video in video player*/
+	
+	/*send api request to node server for saving user*/
 	$scope.setFingerPrint = function(){
 		var fingerPrint = GLOBAL.fingerprint();
 		if( !fingerPrint ){
@@ -69,7 +81,10 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 			});
 		}
 	}
+	/*send api request to node server for saving user*/
 
+	
+	/*format the data from the video api*/
 	$scope.showVideoBar = function(){
 		VideoService.videos().then( function( response ){
 			var index = 0;
@@ -91,9 +106,10 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 			GLOBAL.videos = $scope.params.videos;
 
 		});
-		
 	}
+	/*format the data from the video api*/
 
+	/*slide the slider by deciding the directions*/
 	$scope.scroll = function( direction ){
 		if( direction == 'LEFT'){
 			$scope.scrollPos -= $scope.scrollWidth;
@@ -106,7 +122,9 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
             scrollLeft: $scope.scrollPos
         },100);
 	}
+	/*slide the slider by deciding the directions*/
 	
+	/*slider next and previous button*/
 	$scope.nav = function( direction ){
 		if( direction == 'LEFT'){
 			if( $scope.selectedVideo.index > 0 )
@@ -117,18 +135,15 @@ app.controller('videoController', ['$scope','VideoService', function( $scope, Vi
 				$scope.selectVideo( $scope.params.videos[ $scope.selectedVideo.index + 1 ]);
 		}
 
-	}	
-
-	$scope.showHistory = function(){
-		$('#slide-container').fadeOut( 'fast' );
-		$('#user-video-history-container').fadeIn( 'slow' );
-		angular.element('#user-video-history-list').scope().showHistory( );
 	}
-	
+	/*slider next and previous button*/	
+
+	/*bring the div in focus so next and previous from keyboard works*/
 	setTimeout(function() {
 	document.getElementById('video_container').focus();
 	document.getElementById('left_button').click();
-	}, 5000)
+	}, 5000);
+	/*bring the div in focus so next and previous from keyboard works*/
 
 }]);
 

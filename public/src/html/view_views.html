@@ -1,15 +1,17 @@
+<!-- histoy view-->
 <div class="container">
 <div id="views" ng-controller="videoViewsController" ng-init="showHistory()">
  	<div class="row">
         <div class="col-md-12">    
         
             <ul class="timeline" id="user-video-history-list">
-                 <li class="time-label">
+                <li class="time-label">
                     <span class="bg-aqua">
                         History
                     </span>
                 </li>  
 
+				<!--views history loop-->	
                 <li ng-repeat="log in params.logs" track-by="log._id" ng-attr-id="{{ 'log_' + log._id}}" ng-model="log" >
                     <i class="fa fa-video-camera bg-maroon"></i>
                     <div class="timeline-item">
@@ -30,11 +32,16 @@
                         </div>
                     </div>
                 </li>
+				<!--views history loop-->
+				
                 <li>
                     <i class="fa fa-clock-o bg-gray"></i>
                 </li>
-            </ul>   
+            </ul> 
+
+			
         </div>
     </div>  
 </div> 
 </div> 
+<!-- histoy view-->

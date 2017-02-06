@@ -1,6 +1,6 @@
-
+/*initilize the application*/
 app = angular.module('vod', ["ngRoute"]);
-
+/*angular rouutes*/
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
@@ -13,4 +13,5 @@ app.config(function($routeProvider) {
         templateUrl : "src/html/video_library.html"
     });
 });
+/*angular rouutes*/
 
