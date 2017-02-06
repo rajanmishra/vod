@@ -13,8 +13,11 @@ Demo:  https://vod-10.herokuapp.com/#/
 3. Run ``` npm install ``` to install all node module dependancies 
 4. Start your MongoDB server -- Install MOngoDB from here https://www.mongodb.com/download-center#community
 	4.1 Open command prompt move to  ```C:\Program Files\MongoDB\Server\3.4``` (3.4 is version may vary) in windows -- location of mongodb in linux directly check on terminal if mongodb is installed
-	4.1 Set DB path ```mongod --dbpath 'path to folder where you want to save documents'``` i.e. folder data inside your project ```C:\nodeproject\data```
+	
+	4.1 Set DB path ```mongod --dbpath 'path to folder where you want to save documents'``` i.e. folder data inside your project ```C:\nodeproject\data``` 
+	
 	4.3 Open another command prompt or terminal go to  ```C:\Program Files\MongoDB\Server\3.4``` (3.4 is version may vary) in windows and run ```mongo``` 
+	
 4. Change monogoDB host here : model/connection.js -- mongodb://localhost/video here video is database name
 5. Change API enpoint here : public/src/js/config.js SERVICE_API i.e. -- http://localhost:3000/
 6. Run ```  npm start ``` to run the application 
