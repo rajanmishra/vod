@@ -83,4 +83,4 @@ Ensure that at least one instance of the app is running:``` heroku ps:scale web=
 1. ```git push heroku masters```
 2. ```heroku open```
 
-
+---Please drop a email at rajanmishra2010@hotmail.com for any confusion-----
