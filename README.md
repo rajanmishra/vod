@@ -64,9 +64,13 @@ Application Features
 ##Aplication Architechture
 
 Application Server - Nodejs
+
 Application Framework - Express js
+
 Frontend - Angular, html, css
+
 Database - MongoDB
+
 Hosting - Heroku
 
 
