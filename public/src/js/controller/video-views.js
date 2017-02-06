@@ -52,7 +52,7 @@ app.controller('videoViewsController', ['$scope','VideoService',
 						videoUrl: video.url, 
 						title: video.title,
 						description: video.description,
-						date: moment( log.from ).format('lll') ,
+						date: moment( log.from ).local().calendar() ,
 						duration: $scope.humanizedDuration( moment( log.from ), moment( log.to ) )
 					});
 
