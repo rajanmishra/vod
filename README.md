@@ -18,7 +18,7 @@ Demo:  https://vod-10.herokuapp.com/#/
 
 	4.1 Open command prompt move to  ```C:\Program Files\MongoDB\Server\3.4``` (3.4 is version may vary) in windows -- location of mongodb in linux directly check on terminal if mongodb is installed
 	
-	4.1 Set DB path ```mongod --dbpath 'path to folder where you want to save documents'``` i.e. folder data inside your project ```C:\nodeproject\data``` 
+	4.2 Set DB path ```mongod --dbpath 'path to folder where you want to save documents'``` i.e. folder data inside your project ```C:\nodeproject\data``` 
 	
 	4.3 Open another command prompt or terminal go to  ```C:\Program Files\MongoDB\Server\3.4``` (3.4 is version may vary) in windows and run ```mongo``` 
 	
@@ -67,15 +67,16 @@ Application Server - Nodejs
 Application Framework - Express js
 Frontend - Angular, html, css
 Database - MongoDB
+Hosting - Heroku
 
 
 ##Deployment
 
-Application is deployed in heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the master branch is automatically deployed ).
+Application is deployed on heroku, nodejs hosting environment using continuous deployment feature for github projects.( Each git push to the heroku master branch is automatically deployed ).
 
-Ensure that at least one instance of the app is running: heroku ps:scale web=1
+Ensure that at least one instance of the app is running:``` heroku ps:scale web=1```
 
-1. git push heroku masters
-2. heroku open
+1. ```git push heroku masters```
+2. ```heroku open```
 
 
