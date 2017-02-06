@@ -28,9 +28,9 @@ Demo:  https://vod-10.herokuapp.com/#/
 7. heroku addons:create mongolab (to install mongodb)
 8. Check monogodb host here : model/connection.js (change according to local or production)
 9. Change API enpoint here : public/src/js/config.js (generated in step 6)
-10.git push heroku master
+10. git push heroku master
 11. Ensure that at least one instance of the app is running: heroku ps:scale web=1
-12.heroku open
+12. heroku open
 
 
 Application Features 
