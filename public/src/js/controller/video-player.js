@@ -20,6 +20,7 @@ app.controller('videoPlayerController', ['$scope','VideoService',
 			$('#video-player-modal').on('hidden.bs.modal', function () {
 				$('video').trigger('pause');
     			$scope.saveLog( );
+				document.getElementById('video_container').focus();
 			});
 		}
 
